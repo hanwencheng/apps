@@ -288,6 +288,7 @@ function TxSigned ({ className, currentItem, requestAddress }: Props): React.Rea
               <Qr
                 address={qrAddress}
                 genesisHash={api.genesisHash}
+                specVersion={api.runtimeVersion.specVersion}
                 isHashed={isQrHashed}
                 onSignature={_addQrSignature}
                 payload={qrPayload}

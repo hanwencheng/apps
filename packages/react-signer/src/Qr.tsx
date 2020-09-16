@@ -21,12 +21,13 @@ interface Props {
   isScanning: boolean;
   onSignature: (data: SigData) => void;
   payload: Uint8Array;
+  specVersion: number;
 }
 
 const CMD_HASH = 1;
 const CMD_MORTAL = 2;
 
-function Qr ({ address, className, genesisHash, isHashed, onSignature, payload }: Props): React.ReactElement<Props> {
+function Qr ({ address, className, genesisHash, specVersion, isHashed, onSignature, payload }: Props): React.ReactElement<Props> {
   const { t } = useTranslation();
   const [sigError, setSigError] = useState<string | null>(null);
 
@@ -69,6 +70,7 @@ function Qr ({ address, className, genesisHash, isHashed, onSignature, payload }
               }
               genesisHash={genesisHash}
               payload={payload}
+              specVersion={specVersion}
             />
           </div>
         </Columar.Column>
